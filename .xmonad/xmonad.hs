@@ -52,6 +52,7 @@ import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.ManageDocks             -- avoid xmobar
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.UrgencyHook
+import XMonad.Hooks.SetWMName
 
 import XMonad.Layout.Accordion
 import XMonad.Layout.BinarySpacePartition
@@ -939,6 +940,7 @@ forceCenterFloat = doFloatDep move
     y = (1-h)/2
 
 myStartupHook = do
+setWMName "LG3D"
 spawn "numlockx"
 spawn "[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources"
 spawn "xbacklight -set 40"
