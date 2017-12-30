@@ -20,16 +20,17 @@ Config {  font = "xft:ProFont-11"
        , iconRoot = "."
        , allDesktops = True
        , overrideRedirect = True
-       , commands = [
-
-       -- VOLUME
-       Run Volume "default" "Master" [ "--template" , "<status>" --(adicione no make.conf USE="alsa" para o xmobar ser compilado com essa extenção)
-       , "--"
-       , "--on", "<fc=#ffff66>Vol: <volume></fc>%"
-       , "--onc", "#93a1a1"
-       , "--off", "<fc=#dc322f>Vol: MUDO</fc>"
-       , "--offc", "#dc322f"
-       ] 10
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %StdinReader% %multicpu% %memory% %battery%}{<fc=#93a1a1>%locks%</fc> %dynnetwork% %DEVICEwi% %coretemp% %default:Master% <fc=#d75f00>%mydate%</fc>"
+--     , template = "<fn=1> %StdinReader% %multicpu% %memory% %battery%</fn>}{<fn=1><fc=#93a1a1>%locks%</fc> %dynnetwork% %DEVICEwi% %coretemp% %default:Master% <fc=#d75f00>%mydate%</fc></fn>"
+       , commands = [ Run Volume "default" "Master" [ "--template" , "<status>" --(adicione no make.conf USE="alsa" para o xmobar ser compilado com essa extenção)
+       , "--"                                          --V
+       , "--on", "<fc=#ffff66>Vol: <volume></fc>%"     --O
+       , "--onc", "#93a1a1"                            --L
+       , "--off", "<fc=#dc322f>Vol: MUDO</fc>"         --U
+       , "--offc", "#dc322f"                           --M
+       ] 10                                            --E
 
        -- BATÉRIA
        , Run Battery           [ "--template" , "Bat: <acstatus>"
@@ -64,16 +65,16 @@ Config {  font = "xft:ProFont-11"
        ] 10
 
        -- SINAL WIFI
-       ,  Run Wireless "DEVICE" --(adicione no make.conf USE="wifi" para o xmobar ser compilado com essa extenção) (%wlp2s0wi%)
-       [ "-a", "l"
-       , "-x", "-"
-       , "-t", "<fc=#00afaf><essid> <quality></fc>%"
-       , "-L", "40"
-       , "-H", "70"
-       , "-l", "#d70000"
-       , "-n", "#af8700"
-       , "-h", "#00afaf"
-       ] 10
+--addwifi       ,  Run Wireless "DEVICE" --(adicione no make.conf USE="wifi" para o xmobar ser compilado com essa extenção) (%wlp2s0wi%)
+--addwifi      [ "-a", "l"
+--addwifi      , "-x", "-"
+--addwifi      , "-t", "<fc=#00afaf><essid> <quality></fc>%"
+--addwifi      , "-L", "40"
+--addwifi      , "-H", "70"
+--addwifi      , "-l", "#d70000"
+--addwifi      , "-n", "#af8700"
+--addwifi      , "-h", "#00afaf"
+--addwifi      ] 10
 
        -- MEMÓRIA RAM
        , Run Memory     [ "--template" ,"Mem: <used>Mb"
@@ -104,8 +105,5 @@ Config {  font = "xft:ProFont-11"
        -- BARRA TITULO/TAGS
        , Run StdinReader
 
-       ]
-       , sepChar = "%"
-       , alignSep = "}{"
-       , template = " %StdinReader% %multicpu% %memory% %battery%}{<fc=#93a1a1>%locks%</fc> %dynnetwork% %DEVICEwi% %coretemp% %default:Master% <fc=#d75f00>%mydate%</fc>" }
---     , template = "<fn=1> %StdinReader% %multicpu% %memory% %battery%</fn>}{<fn=1><fc=#93a1a1>%locks%</fc> %dynnetwork% %DEVICEwi% %coretemp% %default:Master% <fc=#d75f00>%mydate%</fc></fn>" }
+                    ]
+       }
