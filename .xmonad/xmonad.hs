@@ -697,7 +697,7 @@ myKeys conf = let
     , ("M-a"                    , addName "Toggle last workspace"       $ toggleWS' ["NSP"])
     ]
     ++ zipM "M-"                "View      ws"                          wsKeys [0..] (withNthWorkspace W.greedyView)
-    ++ zipM "C-"                "Move w to ws"                          wsKeys [0..] (withNthWorkspace W.shift)
+    ++ zipM "M-S-"              "Move w to ws"                          wsKeys [0..] (withNthWorkspace W.shift)
     ++ zipM "M-S-C-"            "Copy w to ws"                          wsKeys [0..] (withNthWorkspace copy)
     ) ^++^
 
