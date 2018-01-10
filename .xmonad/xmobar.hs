@@ -22,58 +22,58 @@ Config {  font = "xft:ProFont-11"
        , overrideRedirect = True
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% %multicpu% %memory% %battery%}{<fc=#93a1a1>%locks%</fc> %dynnetwork% %DEVICEwi% %coretemp% %default:Master% <fc=#d75f00>%mydate%</fc>"
+       , template = "%StdinReader% %multicpu% %memory% %battery% }{<fc=#93a1a1>%locks% </fc>%dynnetwork%%DEVICEwi%%coretemp%%default:Master%<fc=#d75f00,#331400> %mydate% </fc>"
 --     , template = "<fn=1> %StdinReader% %multicpu% %memory% %battery%</fn>}{<fn=1><fc=#93a1a1>%locks%</fc> %dynnetwork% %DEVICEwi% %coretemp% %default:Master% <fc=#d75f00>%mydate%</fc></fn>"
        , commands = [ Run Volume "default" "Master" [ "--template" , "<status>" --(adicione no make.conf USE="alsa" para o xmobar ser compilado com essa extenção)
        , "--"                                          --V
-       , "--on", "<fc=#ffff66>Vol: <volume></fc>%"     --O
+       , "--on", "<fc=#ffff66,#333300> Vol: <volume>% </fc>"   --O
        , "--onc", "#93a1a1"                            --L
-       , "--off", "<fc=#dc322f>Vol: MUDO</fc>"         --U
-       , "--offc", "#dc322f"                           --M
+       , "--off", "<fc=#dc322f,#1a0000> Vol: MUDO </fc>"       --U
+       , "--offc", "#dc322f,#1a0000"                           --M
        ] 10                                            --E
 
        -- BATÉRIA
-       , Run Battery           [ "--template" , "Bat: <acstatus>"
+       , Run Battery           [ "--template" , "<fc=#93a1a1,#262626> Bat: <acstatus> </fc>"
        , "--Low"      , "10"        -- units: %
        , "--High"     , "80"        -- units: %
-       , "--low"      , "#d70000"
-       , "--high"     , "#00afaf"
+       , "--low"      , "#d70000,#262626"
+       , "--high"     , "#00afaf,#262626"
        , "--" -- battery specific options
        -- discharging status
        , "-o"  , "<left>% (<timeleft>)"
        -- AC "on" status
-       , "-O"  , "<fc=#af8700>AC</fc>"
+       , "-O"  , "<fc=#af8700,#262626>AC</fc>"
        -- charged status
-       , "-i"  , "<fc=#af005f>100</fc>%"
+       , "-i"  , "<fc=#af005f,#262626>100</fc>%"
        ] 50
 
        -- TEMPERATURA
-       , Run CoreTemp          [ "--template" , "<core0>°C <core1>°C"
+       , Run CoreTemp          [ "--template" , "<fc=#268bd2,#000033> <core0>°C <core1>°C </fc>"
        , "--Low"      , "60"        -- units: °C
        , "--High"     , "80"        -- units: °C
-       , "--low"      , "#268bd2"
-       , "--normal"   , "#af8700"
-       , "--high"     , "#d70000"
+       , "--low"      , "#268bd2,#000033"
+       , "--normal"   , "#af8700,#000033"
+       , "--high"     , "#d70000,#000033"
        ] 50
 
        -- INTERNET (dynamic interface resolution)
-       , Run DynNetwork        [ "--template" , "<fc=#ff0066><dev></fc> <rx>kB/s <tx>kB/s"
+       , Run DynNetwork        [ "--template" , "<fc=#ff0066,#330014> <dev> </fc><fc=#d33682,#2a0919> <rx>kB/s <tx>kB/s </fc>"
        , "--Low"      , "30000"       -- units: Kb/s
        , "--High"     , "60000"       -- units: Kb/s
-       , "--low"      , "#93a1a1"
-       , "--high"     , "#d70000"
+       , "--low"      , "#d33682,#2a0919"
+       , "--high"     , "#d70000,#2a0919"
        ] 10
 
        -- SINAL WIFI
 --addwifi       ,  Run Wireless "DEVICE" --(adicione no make.conf USE="wifi" para o xmobar ser compilado com essa extenção) (%wlp2s0wi%)
 --addwifi      [ "-a", "l"
 --addwifi      , "-x", "-"
---addwifi      , "-t", "<fc=#00afaf><essid> <quality></fc>%"
+--addwifi      , "-t", "<fc=#00afaf,#003333> <essid> <quality>% </fc>"
 --addwifi      , "-L", "40"
 --addwifi      , "-H", "70"
---addwifi      , "-l", "#d70000"
---addwifi      , "-n", "#af8700"
---addwifi      , "-h", "#00afaf"
+--addwifi      , "-l", "#d70000,#003333"
+--addwifi      , "-n", "#af8700,#003333"
+--addwifi      , "-h", "#00afaf,#003333"
 --addwifi      ] 10
 
        -- MEMÓRIA RAM
@@ -86,12 +86,12 @@ Config {  font = "xft:ProFont-11"
        ] 10
 
        -- CPU
-       , Run MultiCpu   [ "--template" , "<total0>% <total1>% <total2>% <total3>%"
+       , Run MultiCpu   [ "--template" , "<fc=#93a1a1,#262626> <total0>% <total1>% <total2>% <total3>% </fc>"
        , "--Low"        , "50"         -- units: %
        , "--High"       , "85"         -- units: %
-       , "--low"        , "#93a1a1"
-       , "--normal"     , "#d75f00"
-       , "--high"       , "#d70000"
+       , "--low"        , "#93a1a1,#262626"
+       , "--normal"     , "#d75f00,#262626"
+       , "--high"       , "#d70000,#262626"
        ] 10
 
        -- LOCKS
@@ -100,7 +100,7 @@ Config {  font = "xft:ProFont-11"
        -- DATA
        -- , Run Date "%A %d/%m/%y %H:%M:%S " "date" 10
        -- , Run Com "sh" ["/home/jonatas/.xmonad/date.sh"] "date" 10
-       , Run Com "date" ["+%A %d/%m/%y %H:%M:%S        "] "mydate" 10
+       , Run Com "date" ["+%A %d/%m/%y %H:%M:%S  "] "mydate" 10
 
        -- BARRA TITULO/TAGS
        , Run StdinReader
