@@ -830,15 +830,15 @@ myLogHook h = do
     --dynamicLogWithPP $ defaultPP
     dynamicLogWithPP $ def
 
-        { ppCurrent             = xmobarColor "#2aa198" "#262626" . wrap " " " "
-        , ppTitle               = xmobarColor active "" . shorten 50
+        { ppCurrent             = xmobarColor "#2aa198" "#0a2926" . wrap " " " "
+        , ppTitle               = xmobarColor "#268bd2" "#081c2b" . shorten 50 . wrap " " " "
         , ppVisible             = xmobarColor base0  "" . wrap "("")"
         , ppUrgent              = xmobarColor red    "" . wrap " "" "
         , ppHidden              = check
         , ppHiddenNoWindows     = const ""
-        , ppSep                 = " "
+        , ppSep                 = ""
         , ppWsSep               = ""
-        , ppLayout              = xmobarColor yellow ""
+        , ppLayout              = xmobarColor "#b58900" "#332600" . wrap " " " "
         , ppOrder               = id
         , ppOutput              = hPutStrLn h
         , ppSort                = fmap
