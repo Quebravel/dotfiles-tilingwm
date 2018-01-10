@@ -830,7 +830,7 @@ myLogHook h = do
     --dynamicLogWithPP $ defaultPP
     dynamicLogWithPP $ def
 
-        { ppCurrent             = xmobarColor "#2aa198" "#0a2926" . wrap " " " "
+        { ppCurrent             = xmobarColor "#00afaf" "#0a2926" . wrap " " " "
         , ppTitle               = xmobarColor "#268bd2" "#081c2b" . shorten 50 . wrap " " " "
         , ppVisible             = xmobarColor base0  "" . wrap "("")"
         , ppUrgent              = xmobarColor red    "" . wrap " "" "
