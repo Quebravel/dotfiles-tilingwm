@@ -22,7 +22,7 @@ Config {  font = "xft:ProFont-11"
        , overrideRedirect = True
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% %multicpu% %memory% %battery% }{<fc=#93a1a1>%locks% </fc>%dynnetwork%%DEVICEwi%%coretemp%%default:Master%<fc=#d75f00,#331400> %mydate% </fc>"
+       , template = "%StdinReader%%multicpu%%memory%%battery%}{<fc=#93a1a1>%locks% </fc>%dynnetwork%%DEVICEwi%%coretemp%%default:Master%<fc=#d75f00,#331400> %mydate% </fc>"
 --     , template = "<fn=1> %StdinReader% %multicpu% %memory% %battery%</fn>}{<fn=1><fc=#93a1a1>%locks%</fc> %dynnetwork% %DEVICEwi% %coretemp% %default:Master% <fc=#d75f00>%mydate%</fc></fn>"
        , commands = [ Run Volume "default" "Master" [ "--template" , "<status>" --(adicione no make.conf USE="alsa" para o xmobar ser compilado com essa extenção)
        , "--"                                          --V
@@ -33,18 +33,18 @@ Config {  font = "xft:ProFont-11"
        ] 10                                            --E
 
        -- BATÉRIA
-       , Run Battery           [ "--template" , "<fc=#93a1a1,#262626> Bat: <acstatus> </fc>"
-       , "--Low"      , "10"        -- units: %
-       , "--High"     , "80"        -- units: %
-       , "--low"      , "#d70000,#262626"
-       , "--high"     , "#00afaf,#262626"
+       , Run Battery           [ "--template" , "<fc=#6c71c4,#0f1024> Bat: <acstatus> </fc>"
+       -- , "--Low"      , "10"        -- units: %
+       -- , "--High"     , "80"        -- units: %
+       -- , "--low"      , "#d70000,#0f1024"
+       -- , "--high"     , "#00afaf,#0f1024"
        , "--" -- battery specific options
        -- discharging status
        , "-o"  , "<left>% (<timeleft>)"
        -- AC "on" status
-       , "-O"  , "<fc=#af8700,#262626>AC</fc>"
+       , "-O"  , "<fc=#6c71c4,#0f1024>AC</fc>"
        -- charged status
-       , "-i"  , "<fc=#af005f,#262626>100</fc>%"
+       , "-i"  , "<fc=#6c71c4,#0f1024>100</fc>%"
        ] 50
 
        -- TEMPERATURA
@@ -77,21 +77,21 @@ Config {  font = "xft:ProFont-11"
 --addwifi      ] 10
 
        -- MEMÓRIA RAM
-       , Run Memory     [ "--template" ,"Mem: <used>Mb"
+       , Run Memory     [ "--template" ,"<fc=#859900,#2c3300> Mem: <used>Mb </fc>"
        , "--Low"        , "500"        -- units: %
        , "--High"       , "3000"       -- units: %
-       , "--low"        , "#93a1a1"
-       , "--normal"     , "#af8700"
-       , "--high"       , "#d70000"
+       -- , "--low"        , "#93a1a1,#2c3300"
+       , "--normal"     , "#859900,#2c3300"
+       , "--high"       , "#d70000,#2c3300"
        ] 10
 
        -- CPU
-       , Run MultiCpu   [ "--template" , "<fc=#93a1a1,#262626> <total0>% <total1>% <total2>% <total3>% </fc>"
+       , Run MultiCpu   [ "--template" , "<fc=#cb4b16,#2e1106> <total0>% <total1>% <total2>% <total3>% </fc>"
        , "--Low"        , "50"         -- units: %
        , "--High"       , "85"         -- units: %
-       , "--low"        , "#93a1a1,#262626"
-       , "--normal"     , "#d75f00,#262626"
-       , "--high"       , "#d70000,#262626"
+       , "--low"        , "#cb4b16,#2e1106"
+       , "--normal"     , "#cc0066,#2e1106"
+       , "--high"       , "#d70000,#2e1106"
        ] 10
 
        -- LOCKS
