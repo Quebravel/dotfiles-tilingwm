@@ -309,8 +309,9 @@ green   = "#859900"
 gap         = 2
 topbar      = 3
 border      = 0
-prompt      = 10
-status      = 10
+prompt      = 20
+status      = 20
+tabbar      = 15
 
 myNormalBorderColor     = "#000000"
 myFocusedBorderColor    = cyan
@@ -321,7 +322,7 @@ inactive    = base02
 focusColor  = cyan
 unfocusColor = base02
 
-myFont      = "-Misc-Fixed-Regular-R-Normal-*-13-*-*-*-*-*-*-*"
+myFont      ="xft:ProFont for Powerline-Bold-11"
 myBigFont   = "-*-terminus-medium-*-*-*-*-240-*-*-*-*-*-*"
 myWideFont  = "xft:Eurostar Black Extended:"
             ++ "style=Regular:pixelsize=180:hinting=true"
@@ -334,22 +335,23 @@ topBarTheme = def
     , inactiveBorderColor   = base03
     , inactiveColor         = base03
     , inactiveTextColor     = base03
-    , activeBorderColor     = active
-    , activeColor           = active
-    , activeTextColor       = active
-    , urgentBorderColor     = red
-    , urgentTextColor       = yellow
+    , activeBorderColor     = "#dc322f"
+    , activeColor           = "#dc322f"
+    , activeTextColor       = "#dc322f"
+    , urgentBorderColor     = "#fdf6e3"
+    , urgentTextColor       = "#dc322f"
     , decoHeight            = topbar
     }
 
 myTabTheme = def
     { fontName              = myFont
-    , activeColor           = active
+    , activeColor           = "#2aa198"
     , inactiveColor         = base02
-    , activeBorderColor     = active
+    , activeBorderColor     = "#2aa198"
     , inactiveBorderColor   = base02
     , activeTextColor       = base03
     , inactiveTextColor     = base00
+    , decoHeight            = tabbar
     }
 
 myPromptTheme = def
@@ -371,8 +373,8 @@ warmPromptTheme = myPromptTheme
     }
 
 hotPromptTheme = myPromptTheme
-    { bgColor               = red
-    , fgColor               = base3
+    { bgColor               = "#330000"
+    , fgColor               = "#dc322f"
     , position              = Top
     }
 
