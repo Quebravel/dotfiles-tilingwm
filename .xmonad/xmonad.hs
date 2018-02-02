@@ -595,14 +595,14 @@ myKeys conf = let
     , ("M-<KP_Delete>"             , addName "Power reset"                     $ spawn "shutdown -r now")
     , ("<XF86PowerOff>"            , addName "Power off"                       $ spawn "shutdown -h now")
 
-    , ("M-<F5>"                    , addName "Up brilho"                       $ spawn "xbacklight -inc 6")
-    , ("M-<F4>"                    , addName "Down brilho"                     $ spawn "xbacklight -dec 6")
+    , ("M1-<Right>"                , addName "Up brilho"                       $ spawn "xbacklight -inc 6")
+    , ("M1-<Left>"                 , addName "Down brilho"                     $ spawn "xbacklight -dec 6")
     , ("<XF86MonBrightnessUp>"     , addName "Up brilho"                       $ spawn "xbacklight -inc 6")
     , ("<XF86MonBrightnessDown>"   , addName "Down brilho"                     $ spawn "xbacklight -dec 6")
 
-    , ("M-<F12>"                   , addName "Up audio"                        $ spawn "amixer set Master 5%+")
-    , ("M-<F11>"                   , addName "Down audio"                      $ spawn "amixer set Master 5%-")
-    , ("M-<F10>"                   , addName "MUTE audio"                      $ spawn "amixer set Master toggle")
+    , ("M1-<Up>"                   , addName "Up audio"                        $ spawn "amixer set Master 5%+")
+    , ("M1-<Down>"                 , addName "Down audio"                      $ spawn "amixer set Master 5%-")
+    , ("M1-m"                      , addName "MUTE audio"                      $ spawn "amixer set Master toggle")
     , ("<XF86AudioRaiseVolume>"    , addName "Up audio"                        $ spawn "amixer set Master 5%+")
     , ("<XF86AudioLowerVolume>"    , addName "Down audio"                      $ spawn "amixer set Master 5%-")
     , ("<XF86AudioMute>"           , addName "MUTE audio"                      $ spawn "amixer set Master toggle")
@@ -622,6 +622,10 @@ myKeys conf = let
     , ("M-C-<KP_Up>"               , addName "Redim BAIXO levanta"             $ withFocused (keysResizeWindow (0,-5) (0,0)))
     , ("M-C-<KP_Down>"             , addName "Redim BAIXO desce"               $ withFocused (keysResizeWindow (0,5) (0,0)))
 
+    , ("M-m"                       , addName "MOC Open Player"                 $ spawn "urxvt -e mocp")
+    , ("M1-<Space>"                , addName "MOC Play/Pause"                  $ spawn "mocp -G")
+    , ("M1-]"                      , addName "MOC Next Music"                  $ spawn "mocp -f")
+    , ("M1-["                      , addName "MOC Previous Mucic"              $ spawn "mocp -r")
 
     ] ^++^
 
