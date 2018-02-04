@@ -23,14 +23,19 @@ Config {  font = "xft:ProFont-11"
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%StdinReader%%multicpu%%memory%%battery%}{<fc=#93a1a1>%locks% </fc>%dynnetwork%%DEVICEwi%%coretemp%%default:Master%<fc=#d75f00,#331400> %mydate% </fc>"
+
 --     , template = "<fn=1> %StdinReader% %multicpu% %memory% %battery%</fn>}{<fn=1><fc=#93a1a1>%locks%</fc> %dynnetwork% %DEVICEwi% %coretemp% %default:Master% <fc=#d75f00>%mydate%</fc></fn>"
-       , commands = [ Run Volume "default" "Master" [ "--template" , "<status>" --(adicione no make.conf USE="alsa" para o xmobar ser compilado com essa extenção)
-       , "--"                                          --V
-       , "--on", "<fc=#ffff66,#333300> Vol: <volume>% </fc>"   --O
-       , "--onc", "#93a1a1"                            --L
-       , "--off", "<fc=#dc322f,#1a0000> Vol: MUDO </fc>"       --U
-       , "--offc", "#dc322f,#1a0000"                           --M
-       ] 10                                            --E
+
+       , commands = [
+
+       -- SOM
+         Run Volume "default" "Master" [ "--template" , "<status>"
+       , "--"
+       , "--on"       , "<fc=#ffff66,#333300> Vol: <volume>% </fc>"
+       , "--onc"      , "#93a1a1"
+       , "--off"      , "<fc=#dc322f,#1a0000> Vol: MUDO </fc>"
+       , "--offc"     , "#dc322f,#1a0000"
+       ] 10
 
        -- BATÉRIA
        , Run Battery           [ "--template" , "<fc=#6c71c4,#0f1024> Bat: <acstatus> </fc>"
