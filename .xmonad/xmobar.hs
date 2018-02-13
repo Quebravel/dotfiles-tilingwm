@@ -2,9 +2,10 @@
 -- mpd mpris timezone with_conduit with_uvmeter alsa dbus inotify wifi xft xpm
 -- O workspace padrão de inicio dependera em qual workspace você esta depois de fazer a recompilação.
 
-Config {  font = "xft:ProFont-11"
+Config {  font = "xft:misc ohsnap:size:14,FontAwesome:size=9"
+        --       "xft:ProFont-11"
         --       "-Misc-Fixed-Regular-R-Normal-*-13-*-*-*-*-*-*-*"
-       , additionalFonts = [ "xft:TamzenForPowerline-11" ] --(adicione no make.conf USE="xft" para o xmobar ser compilado com essa extenção)
+        --       , additionalFonts = [ "xft:TamzenForPowerline-11" ] --(adicione no make.conf USE="xft" para o xmobar ser compilado com essa extenção)
        , borderColor = "#1C1C1C"
        , border = NoBorder
        , bgColor = "#1C1C1C"
@@ -31,14 +32,14 @@ Config {  font = "xft:ProFont-11"
        -- SOM
          Run Volume "default" "Master" [ "--template" , "<status>"
        , "--"
-       , "--on"       , "<fc=#ffff66,#333300> Vol: <volume>% </fc>"
+       , "--on"       , "<fc=#ffff66,#333300>  <volume>% </fc>"
        , "--onc"      , "#93a1a1"
-       , "--off"      , "<fc=#dc322f,#1a0000> Vol: MUDO </fc>"
+       , "--off"      , "<fc=#dc322f,#1a0000>  MUDO </fc>"
        , "--offc"     , "#dc322f,#1a0000"
        ] 10
 
        -- BATÉRIA
-       , Run Battery           [ "--template" , "<fc=#6c71c4,#0f1024> Bat: <acstatus> </fc>"
+       , Run Battery           [ "--template" , "<fc=#6c71c4,#0f1024> <acstatus> </fc>"
        -- , "--Low"      , "10"        -- units: %
        -- , "--High"     , "80"        -- units: %
        -- , "--low"      , "#d70000,#0f1024"
@@ -47,9 +48,9 @@ Config {  font = "xft:ProFont-11"
        -- discharging status
        , "-o"  , "<left>% (<timeleft>)"
        -- AC "on" status
-       , "-O"  , "<fc=#6c71c4,#0f1024>AC</fc>"
+       , "-O"  , "<fc=#6c71c4,#0f1024></fc>"
        -- charged status
-       , "-i"  , "<fc=#6c71c4,#0f1024>100</fc>%"
+       , "-i"  , "<fc=#6c71c4,#0f1024></fc>"
        ] 50
 
        -- TEMPERATURA
@@ -62,7 +63,7 @@ Config {  font = "xft:ProFont-11"
        ] 50
 
        -- INTERNET (dynamic interface resolution)
-       , Run DynNetwork        [ "--template" , "<fc=#ff0066,#330014> <dev> </fc><fc=#d33682,#2a0919> <rx>kB/s <tx>kB/s </fc>"
+       , Run DynNetwork        [ "--template" , "<fc=#ff0066,#330014> <dev> </fc><fc=#d33682,#2a0919>  <rx>kB/s  <tx>kB/s </fc>"
        , "--Low"      , "30000"       -- units: Kb/s
        , "--High"     , "60000"       -- units: Kb/s
        , "--low"      , "#d33682,#2a0919"
@@ -73,7 +74,7 @@ Config {  font = "xft:ProFont-11"
 --addwifi       ,  Run Wireless "DEVICE" --(adicione no make.conf USE="wifi" para o xmobar ser compilado com essa extenção) (%wlp2s0wi%)
 --addwifi      [ "-a", "l"
 --addwifi      , "-x", "-"
---addwifi      , "-t", "<fc=#00afaf,#003333> <essid> <quality>% </fc>"
+--addwifi      , "-t", "<fc=#00afaf,#003333>  <essid> <quality>% </fc>"
 --addwifi      , "-L", "40"
 --addwifi      , "-H", "70"
 --addwifi      , "-l", "#d70000,#003333"
@@ -105,7 +106,7 @@ Config {  font = "xft:ProFont-11"
        -- DATA
        -- , Run Date "%A %d/%m/%y %H:%M:%S " "date" 10
        -- , Run Com "sh" ["/home/jonatas/.xmonad/date.sh"] "date" 10
-       , Run Com "date" ["+%A %d/%m/%y %H:%M:%S  "] "mydate" 10
+       , Run Com "date" ["+ %A %d/%m/%y %H:%M:%S  "] "mydate" 10
 
        -- BARRA TITULO/TAGS
        , Run StdinReader
