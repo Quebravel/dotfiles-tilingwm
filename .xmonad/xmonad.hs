@@ -306,7 +306,7 @@ cyan    = "#2aa198"
 green   = "#859900"
 
 -- sizes
-gap         = 2
+gap         = 6
 topbar      = 3
 border      = 0
 prompt      = 20
@@ -954,4 +954,4 @@ spawn "stalonetray"
 spawn "feh --bg-scale ~/Imagens/girl.jpg"
 spawn "xsetroot -cursor_name left_ptr"
 --spawn "Xcursor.theme: Adwaita" -- já carregado com o xresources
-spawn "xcompmgr"
+spawn "compton"
