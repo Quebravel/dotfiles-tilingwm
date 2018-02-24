@@ -322,7 +322,7 @@ inactive    = base02
 focusColor  = cyan
 unfocusColor = base02
 
-myFont      ="xft:ProFont for Powerline-Bold-11"
+myFont      ="xft:misc ohsnap-11"
 myBigFont   = "-*-terminus-medium-*-*-*-*-240-*-*-*-*-*-*"
 myWideFont  = "xft:Eurostar Black Extended:"
             ++ "style=Regular:pixelsize=180:hinting=true"
@@ -954,4 +954,4 @@ spawn "stalonetray"
 spawn "feh --bg-scale ~/Imagens/girl.jpg"
 spawn "xsetroot -cursor_name left_ptr"
 --spawn "Xcursor.theme: Adwaita" -- já carregado com o xresources
-spawn "compton"
+spawn "xcompmgr"
