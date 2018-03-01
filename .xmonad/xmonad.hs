@@ -306,7 +306,7 @@ cyan    = "#2aa198"
 green   = "#859900"
 
 -- sizes
-gap         = 6
+gap         = 9
 topbar      = 3
 border      = 0
 prompt      = 20
