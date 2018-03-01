@@ -30,7 +30,7 @@ Config {  font = "xft:misc ohsnap:size:14,FontAwesome:size=9"
        , commands = [
 
        -- SOM
-       -- Run Com "sh" ["/home/jonatas/.xmonad/volume.sh"] "volume" 10
+       -- Run Com "sh" ["/home/jonatas/.xmonad/volume.sh"] "volume" 10 || template <fc=#ffff66,#333300> %volume% </fc>
          Run Volume "default" "Master" [ "--template" , "<status>"
        , "--"
        , "--on"       , "<fc=#ffff66,#333300>  <volume>% </fc>"
