@@ -33,9 +33,9 @@ Config {  font = "xft:misc ohsnap:size:14,FontAwesome:size=9"
        -- Run Com "sh" ["/home/jonatas/.xmonad/volume.sh"] "volume" 10 || template <fc=#ffff66,#333300> %volume% </fc>
          Run Volume "default" "Master" [ "--template" , "<status>"
        , "--"
-       , "--on"       , "<fc=#ffff66,#333300>  <volume>% </fc>"
+       , "--on"       , "<fc=#ffff66,#333300> \xf001 <volume>% </fc>"
        , "--onc"      , "#93a1a1"
-       , "--off"      , "<fc=#dc322f,#1a0000>  MUDO </fc>"
+       , "--off"      , "<fc=#dc322f,#1a0000> \xf057 MUDO </fc>"
        , "--offc"     , "#dc322f,#1a0000"
        ] 10
 
@@ -49,9 +49,9 @@ Config {  font = "xft:misc ohsnap:size:14,FontAwesome:size=9"
        -- discharging status
        , "-o"  , "<left>% (<timeleft>)"
        -- AC "on" status
-       , "-O"  , "<fc=#6c71c4,#0f1024></fc>"
+       , "-O"  , "<fc=#6c71c4,#0f1024>\xf1e6</fc>"
        -- charged status
-       , "-i"  , "<fc=#6c71c4,#0f1024></fc>"
+       , "-i"  , "<fc=#6c71c4,#0f1024>\xf240</fc>"
        ] 50
 
        -- TEMPERATURA
@@ -64,7 +64,7 @@ Config {  font = "xft:misc ohsnap:size:14,FontAwesome:size=9"
        ] 50
 
        -- INTERNET (dynamic interface resolution)
-       , Run DynNetwork        [ "--template" , "<fc=#ff0066,#330014> <dev> </fc><fc=#d33682,#2a0919>  <rx>kB/s  <tx>kB/s </fc>"
+       , Run DynNetwork        [ "--template" , "<fc=#ff0066,#330014> <dev> </fc><fc=#d33682,#2a0919> \xf063 <rx>kB/s \xf062 <tx>kB/s </fc>"
        , "--Low"      , "30000"       -- units: Kb/s
        , "--High"     , "60000"       -- units: Kb/s
        , "--low"      , "#d33682,#2a0919"
@@ -75,7 +75,7 @@ Config {  font = "xft:misc ohsnap:size:14,FontAwesome:size=9"
 --addwifi       ,  Run Wireless "DEVICE" --(adicione no make.conf USE="wifi" para o xmobar ser compilado com essa extenção) (%wlp2s0wi%)
 --addwifi      [ "-a", "l"
 --addwifi      , "-x", "-"
---addwifi      , "-t", "<fc=#00afaf,#003333>  <essid> <quality>% </fc>"
+--addwifi      , "-t", "<fc=#00afaf,#003333> \xf213 <essid> <quality>% </fc>"
 --addwifi      , "-L", "40"
 --addwifi      , "-H", "70"
 --addwifi      , "-l", "#d70000,#003333"
@@ -84,7 +84,7 @@ Config {  font = "xft:misc ohsnap:size:14,FontAwesome:size=9"
 --addwifi      ] 10
 
        -- MEMÓRIA RAM
-       , Run Memory     [ "--template" ,"<fc=#859900,#2c3300> Mem: <used>Mb </fc>"
+       , Run Memory     [ "--template" ,"<fc=#859900,#2c3300> <used>Mb </fc>"
        , "--Low"        , "500"        -- units: %
        , "--High"       , "3000"       -- units: %
        -- , "--low"        , "#93a1a1,#2c3300"
@@ -107,7 +107,7 @@ Config {  font = "xft:misc ohsnap:size:14,FontAwesome:size=9"
        -- DATA
        -- , Run Date "%A %d/%m/%y %H:%M:%S " "date" 10
        -- , Run Com "sh" ["/home/jonatas/.xmonad/date.sh"] "date" 10
-       , Run Com "date" ["+ %A %d/%m/%y %H:%M:%S  "] "mydate" 10
+       , Run Com "date" ["+\xf017 %A %d/%m/%y %H:%M:%S  "] "mydate" 10
 
        -- BARRA TITULO/TAGS
        , Run StdinReader
