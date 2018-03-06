@@ -30,13 +30,13 @@ Config {  font = "xft:misc ohsnap:size:14,FontAwesome:size=9"
        , commands = [
 
        -- SOM
-       -- Run Com "sh" ["/home/jonatas/.xmonad/volume.sh"] "volume" 10 || template <fc=#ffff66,#cc9c00> %volume% </fc>
+       -- Run Com "sh" ["/home/jonatas/.xmonad/volume.sh"] "volume" 10 || template <fc=#cc9c00,#333300> %volume% </fc>
          Run Volume "default" "Master" [ "--template" , "<status>"
        , "--"
-       , "--on"       , "<fc=#ffff66,#cc9c00> \xf001 <volume>% </fc>"
-       , "--onc"      , "#93a1a1"
-       , "--off"      , "<fc=#dc322f,#1a0000> \xf057 MUDO </fc>"
-       , "--offc"     , "#dc322f,#1a0000"
+       , "--on"       , "<fc=#cc9c00,#333300> \xf0a1 <volume>% </fc>"
+     -- , "--onc"      , "#93a1a1"
+       , "--off"      , "<fc=#333300,#cc9c00> \xf0a1 MUDO </fc>"
+     -- , "--offc"     , "#dc322f,#1a0000"
        ] 10
 
        -- BATÉRIA
