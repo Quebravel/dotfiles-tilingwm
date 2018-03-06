@@ -325,7 +325,7 @@ unfocusColor = base02
 myFont      ="xft:misc ohsnap-11"
 myBigFont   = "-*-terminus-medium-*-*-*-*-240-*-*-*-*-*-*"
 myWideFont  = "xft:Eurostar Black Extended:"
-            ++ "style=Regular:pixelsize=180:hinting=true"
+            ++ "style=Regular:pixelsize=50:hinting=true"
 
 -- this is a "fake title" used as a highlight bar in lieu of full borders
 -- (I find this a cleaner and less visually intrusive solution)
@@ -381,8 +381,8 @@ hotPromptTheme = myPromptTheme
 myShowWNameTheme = def
     { swn_font              = myWideFont
     , swn_fade              = 0.5
-    , swn_bgcolor           = "#000000"
-    , swn_color             = "#FFFFFF"
+    , swn_bgcolor           = "#330000"
+    , swn_color             = "#ffcc00"
     }
 
 ---------------------------------------------------------------------------
