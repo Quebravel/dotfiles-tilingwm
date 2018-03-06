@@ -426,7 +426,7 @@ myLayoutHook = showWorkspaceName
              $ fullBarToggle
              $ mirrorToggle
              $ reflectToggle
-             $ tabs ||| flex
+             $ tabs ||| flex ||| threeCol
   where
 
 --    testTall = Tall 1 (1/50) (2/3)
