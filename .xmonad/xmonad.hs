@@ -954,4 +954,4 @@ spawn "stalonetray"
 spawn "feh --bg-scale ~/Imagens/girl.jpg"
 spawn "xsetroot -cursor_name left_ptr"
 --spawn "Xcursor.theme: Adwaita" -- já carregado com o xresources
-spawn "xcompmgr"
+spawn "compton"
