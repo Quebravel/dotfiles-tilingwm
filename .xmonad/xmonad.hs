@@ -955,4 +955,4 @@ spawn "sleep 1; feh --bg-scale ~/Imagens/girl.jpg"
 spawn "xsetroot -cursor_name left_ptr"
 --spawn "Xcursor.theme: Adwaita" -- já carregado com o xresources
 spawn "compton"
-spawn "dmenu_run -y -18; pkill dmenu_run"
+spawn "dmenu_run -y -18;sleep 0.5; pkill dmenu"
