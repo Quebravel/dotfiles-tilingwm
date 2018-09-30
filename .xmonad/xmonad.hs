@@ -949,9 +949,10 @@ myStartupHook = do
 setWMName "LG3D"
 spawn "numlockx"
 spawn "[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources"
-spawn "xbacklight -set 40"
-spawn "stalonetray"
-spawn "feh --bg-scale ~/Imagens/girl.jpg"
+spawn "sleep 2; xbacklight -set 40"
+spawn "sleep 3; stalonetray"
+spawn "pkill stalonetray"
+spawn "sleep 1; feh --bg-scale ~/Imagens/girl.jpg"
 spawn "xsetroot -cursor_name left_ptr"
 --spawn "Xcursor.theme: Adwaita" -- já carregado com o xresources
 spawn "compton"
