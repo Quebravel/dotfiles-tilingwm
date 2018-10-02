@@ -253,11 +253,12 @@ myIDE               = "./eclipse/java-oxygen/eclipse/eclipse"
 myMail              = "/opt/google/chrome/google-chrome --profile-directory=Default --app-id=egddcdhcadfhcbheacnhikllgjokeico"
 myKeep              = "/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hcfcmgpnmpinpidjdgejehjchlbglpde"
 myTranslate         = "/opt/google/chrome/google-chrome --profile-directory=Default --app-id=fklgpoecafmhpbmoepkbhkhhbahodcdh"
-myLauncher          = "dmenu_run -o 0.9 -h 17 -fn 'misc ohsnap' -nb '#081c2b' -nf '#268bd2' -sf '#ffcc00' -sb '#4d3d00' -y 18 -p '>>>'"
+--myLauncher          = "dmenu_run -o 0.9 -h 17 -fn 'misc ohsnap' -nb '#081c2b' -nf '#268bd2' -sf '#ffcc00' -sb '#4d3d00' -y 18 -p '>>>'"
+myLauncher          = "dmenu_run -o 1.0 -h 17 -fn 'misc ohsnap:bold' -nb '#d7d7af' -nf '#1c1c1c' -sf '#d7d7af' -sb '#ff0066' -y 18 -p '>>>'"
+
 --myLauncher          = "rofi -matching fuzzy -show run"
 --myLauncher          = "rofi -combi-modi window,drun -show combi -modi combi -width 90 -location 2 -columns 1"
 --myLauncher          = "rofi -matching fuzzy -modi combi -show combi -combi-modi run,drun"
-
 
 -- I'm using a custom browser launching script (see myBrowser above) that
 -- is workspace aware. It launches an instance of Chrome that is unique
