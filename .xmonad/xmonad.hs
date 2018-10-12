@@ -256,7 +256,7 @@ myMail              = "/opt/google/chrome/google-chrome --profile-directory=Defa
 myKeep              = "/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hcfcmgpnmpinpidjdgejehjchlbglpde"
 myTranslate         = "/opt/google/chrome/google-chrome --profile-directory=Default --app-id=fklgpoecafmhpbmoepkbhkhhbahodcdh"
 --myLauncher          = "dmenu_run -o 0.9 -h 17 -fn 'misc ohsnap' -nb '#081c2b' -nf '#268bd2' -sf '#ffcc00' -sb '#4d3d00' -y 18 -p '>>>'"
-myLauncher          = "dmenu_run -o 1.0 -h 17 -fn 'misc ohsnap:bold' -nb '#d7d7af' -nf '#1c1c1c' -sf '#d7d7af' -sb '#ff0066' -y 18 -p '>>>'"
+myLauncher          = "dmenu_run -o 1.0 -h 17 -fn 'misc ohsnap:bold' -nb '#d7d7af' -nf '#1c1c1c' -y 18 -p '>>>'"
 
 --myLauncher          = "rofi -matching fuzzy -show run"
 --myLauncher          = "rofi -combi-modi window,drun -show combi -modi combi -width 90 -location 2 -columns 1"
