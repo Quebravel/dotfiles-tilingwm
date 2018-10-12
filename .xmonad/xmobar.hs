@@ -101,7 +101,7 @@ Config {  font = "xft:misc ohsnap:size:14,FontAwesome:size=9"
        -- , "--high"       , "#d70000"
        -- ] 10
 
-       , Run Cpu [ "--template" ,"<total>"
+       , Run Cpu [ "--template" ,"<total>%"
        ,"-L","15"
        ,"-H","50"
        ,"--normal","#cb4b16"
