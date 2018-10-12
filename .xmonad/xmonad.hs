@@ -111,7 +111,7 @@ import XMonad.Layout.ResizableTile
 import XMonad.Layout.Tabbed
 import XMonad.Layout.Maximize
 import XMonad.Layout.SimplestFloat
-import XMonad.Layout.Fullscreen
+import XMonad.Layout.Fullscreen as LF
 import XMonad.Layout.NoBorders
 
 
@@ -192,7 +192,8 @@ projects =
 
     , Project   { projectName       = wsWRK
                 , projectDirectory  = "~/"
-                , projectStartHook  = Just $ do spawn $ myBrowser
+                , projectStartHook  = Nothing
+--                , projectStartHook  = Just $ do spawn $ myBrowser
                 }
 
     , Project   { projectName       = wsWRK2
@@ -423,8 +424,9 @@ myLayoutHook = showWorkspaceName
 --             $ avoidStruts
              $ onWorkspace wsFLOAT floatWorkSpace
              $ smartBorders
-             $ fullscreenFloat -- fixes floating windows going full screen, while retaining "bounded" fullscreen
+             $ LF.fullscreenFloat -- fixes floating windows going full screen, while retaining "bounded" fullscreen
              $ fullScreenToggle
+             $ LF.fullscreenFull
              $ fullBarToggle
              $ mirrorToggle
              $ reflectToggle
@@ -838,15 +840,15 @@ myLogHook h = do
     --dynamicLogWithPP $ defaultPP
     dynamicLogWithPP $ def
 
-        { ppCurrent             = xmobarColor "#00afaf" "#0a2926" . wrap " " " "
-        , ppTitle               = xmobarColor "#268bd2" "#081c2b" . shorten 50 . wrap " " " "
+        { ppCurrent             = xmobarColor "#00afaf" "" . wrap "[" "]"
+        , ppTitle               = xmobarColor "#268bd2" "" . shorten 50 . wrap " " " "
         , ppVisible             = xmobarColor base0  "" . wrap "("")"
         , ppUrgent              = xmobarColor red    "" . wrap " "" "
         , ppHidden              = check
         , ppHiddenNoWindows     = const ""
         , ppSep                 = ""
         , ppWsSep               = ""
-        , ppLayout              = xmobarColor "#b58900" "#332600" . wrap " " " "
+        , ppLayout              = xmobarColor "#b58900" "" . wrap " " " "
         , ppOrder               = id
         , ppOutput              = hPutStrLn h
         , ppSort                = fmap
@@ -857,9 +859,9 @@ myLogHook h = do
 
 myFadeHook = composeAll
     [ opaque -- default to opaque
-    , isUnfocused --> opacity 0.85
+    , isUnfocused --> opacity 1.0
     , (className =? "Terminator") <&&> (isUnfocused) --> opacity 0.9
-    , (className =? "URxvt") <&&> (isUnfocused) --> opacity 0.9
+    , (className =? "URxvt") <&&> (isUnfocused) --> opacity 1.0
     , fmap ("Google" `isPrefixOf`) className --> opaque
     , isDialog --> opaque
     --, isUnfocused --> opacity 0.55
@@ -899,7 +901,7 @@ myManageHook =
     <+> manageDocks
 --    <+> namedScratchpadManageHook scratchpads
     <+> manageHook defaultConfig
-    <+> fullscreenManageHook
+    <+> LF.fullscreenManageHook
     <+> manageSpawn
     where
         manageSpecific = composeOne
@@ -933,8 +935,7 @@ myManageHook =
 myHandleEventHook = docksEventHook
                 <+> fadeWindowsEventHook
                 <+> handleEventHook def
-                <+> XMonad.Hooks.EwmhDesktops.fullscreenEventHook
-
+                <+> LF.fullscreenEventHook
 forceCenterFloat :: ManageHook
 forceCenterFloat = doFloatDep move
   where
