@@ -185,7 +185,8 @@ projects =
 
     [ Project   { projectName       = wsGEN
                 , projectDirectory  = "~/"
-                , projectStartHook  = Just $ do spawnOn wsGEN myTerminal
+                , projectStartHook  = Nothing
+--                , projectStartHook  = Just $ do spawnOn wsGEN myTerminal
                 }
 
 
@@ -677,7 +678,7 @@ myKeys conf = let
     ++ zipM' "M-"               "Navigate window"                           dirKeys dirs windowGo True
     -- ++ zipM' "M-S-"               "Move window"                               dirKeys dirs windowSwap True
     -- TODO: following may necessitate use of a "passthrough" binding that can send C- values to focused w
-    ++ zipM' "C-"               "Move window"                               dirKeys dirs windowSwap True
+    ++ zipM' "M1-"              "Move window"                               dirKeys dirs windowSwap True
     ++ zipM  "M-C-"             "Merge w/sublayout"                         dirKeys dirs (sendMessage . pullGroup)
     ++ zipM' "M-"               "Navigate screen"                           arrowKeys dirs screenGo True
     ++ zipM' "M-C-"             "Move window to screen"                     arrowKeys dirs windowToScreen True
