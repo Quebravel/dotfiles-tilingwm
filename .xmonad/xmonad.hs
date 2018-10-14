@@ -582,8 +582,8 @@ myKeys conf = let
     -- System / Utilities                                                  
     -----------------------------------------------------------------------
     subKeys "System"
-    [ ("M-q"                    , addName "Restart XMonad"                  $ spawn "xmonad --restart")
-    , ("M-C-q"                  , addName "Rebuild & restart XMonad"        $ spawn "xmonad --recompile && xmonad --restart")
+    [ ("M-q"                    , addName "Restart XMonad"                  $ confirmPrompt hotPromptTheme "Restart XMonad" $ restartXmonad)
+    , ("M-C-q"                  , addName "Rebuild & restart XMonad"        $ confirmPrompt hotPromptTheme "Recompile and Restart XMonad" $ rebuildXmonad)
     , ("M-S-q"                  , addName "Quit XMonad"                     $ confirmPrompt hotPromptTheme "Quit XMonad" $ io (exitWith ExitSuccess))
 --    , ("M-x"                    , addName "Lock screen"                     $ spawn "xset s activate")
 --    , ("M-<F4>"                    , addName "Print Screen"                    $ return ())
@@ -595,9 +595,9 @@ myKeys conf = let
     -----------------------------------------------------------------------
 
     subKeys "Actions"
-    [ ("M-<KP_Insert>"             , addName "Power off"                       $ spawn "shutdown -h now")
-    , ("M-<KP_Delete>"             , addName "Power reset"                     $ spawn "shutdown -r now")
-    , ("<XF86PowerOff>"            , addName "Power off"                       $ spawn "shutdown -h now")
+    [ ("M-<KP_Insert>"             , addName "Power off"                       $ confirmPrompt hotPromptTheme "Shutdown Linux" $ spawn "shutdown -h now")
+    , ("M-<KP_Delete>"             , addName "Power reset"                     $ confirmPrompt hotPromptTheme "Restart Linux" $ spawn "shutdown -r now")
+    , ("<XF86PowerOff>"            , addName "Power off"                       $ confirmPrompt hotPromptTheme "Shutdown Linux" $ spawn "shutdown -h now")
 
     , ("M1-<Right>"                , addName "Up brilho"                       $ spawn "xbacklight -inc 6")
     , ("M1-<Left>"                 , addName "Down brilho"                     $ spawn "xbacklight -dec 6")
@@ -815,11 +815,11 @@ quitXmonad = io (exitWith ExitSuccess)
 
 rebuildXmonad :: X ()
 rebuildXmonad = do
-    spawn "xmonad --recompile && xmonad --restart"
+    spawn "pkill stalonetray; xmonad --recompile && xmonad --restart"
 
 restartXmonad :: X ()
 restartXmonad = do
-    spawn "xmonad --restart"
+    spawn "pkill stalonetray; xmonad --restart"
 
 
 
