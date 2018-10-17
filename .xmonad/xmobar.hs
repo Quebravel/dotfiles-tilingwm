@@ -6,9 +6,9 @@ Config {  font = "xft:misc ohsnap:size:14,FontAwesome:size=9"
         --       "xft:ProFont-11" / "-*-ohsnap-medium-r-normal-*-14-*-*-*-*-*-*-*"
         --       "-Misc-Fixed-Regular-R-Normal-*-13-*-*-*-*-*-*-*"
        , additionalFonts = ["-misc-ohsnap.icons-medium-r-normal--11-79-100-100-c-60-iso8859-1"]  --(adicione no make.conf USE="xft" para o xmobar ser compilado com essa extenção)
-       , borderColor = "#1C1C1C"
+       , borderColor = "#0d0d0d"
        , border = NoBorder
-       , bgColor = "#1C1C1C"
+       , bgColor = "#0d0d0d"
        , fgColor = "#8a8a8a"
        , alpha = 255
        , position = TopW L 100
