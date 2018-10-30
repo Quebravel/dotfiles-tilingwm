@@ -110,6 +110,10 @@ Config {  font = "xft:misc ohsnap:size:14,FontAwesome:size=9"
 
        -- LOCKS
        , Run Locks
+       
+       -- MPD
+       -- , Run MPD ["--template", "<fc=#d70000><composer> <title> <remaining></fc> "
+       -- ] 10
 
        -- DATA
        -- , Run Date "%A %d/%m/%y %H:%M:%S " "date" 10
