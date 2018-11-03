@@ -7,6 +7,7 @@
 
 #export MPD_HOST=$HOME/.config/mpd/socket
 #mpd &
+#redshift -c ~/.config/redshift/redshift.conf &
 
 xset +fp /home/jonatas/.local/share/fonts
 xset fp rehash
