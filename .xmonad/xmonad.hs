@@ -606,6 +606,8 @@ myKeys conf = let
 
     , ("M1-<Up>"                   , addName "Up audio"                        $ spawn "amixer set Master 5%+")
     , ("M1-<Down>"                 , addName "Down audio"                      $ spawn "amixer set Master 5%-")
+    , ("M1-S-<Up>"                 , addName "Up audio beyond"                 $ spawn "pactl set-sink-volume 0 +10%")
+    , ("M1-S-<Down>"               , addName "Down audio beyond"               $ spawn "pactl set-sink-volume 0 -10%")
     , ("M1-m"                      , addName "MUTE audio"                      $ spawn "amixer set Master toggle")
     , ("<XF86AudioRaiseVolume>"    , addName "Up audio"                        $ spawn "amixer set Master 5%+")
     , ("<XF86AudioLowerVolume>"    , addName "Down audio"                      $ spawn "amixer set Master 5%-")
